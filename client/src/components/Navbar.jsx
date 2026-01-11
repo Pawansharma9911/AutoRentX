@@ -35,7 +35,7 @@ const Navbar = () => {
     className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 border-b border-bordercolor relative transition-all 
     ${location.pathname ==="/" && "bg-light"}`}>
 
-      // carRental image
+       {/* carRental image */}
         <Link to='/' >
         <motion.img  whileHover={{scale:1.05}} src={assets.logo} alt="logo"  className='h-8'/>
         </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
             ${location.pathname ==="/" ?"bg-light":"bg-white"}
              ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}>
           
-            // three menu links
+            {/* // three menu links */}
             {menuLinks.map((link,index)=>(
               <Link key={index} to={link.path}>
               {link.name}
@@ -52,14 +52,14 @@ const Navbar = () => {
             ))}
 
           
-            // search icon 
+            {/* // search icon  */}
             <div className='hidden lg:flex items-center text-sm gap-2 border border-bordercolor px-3 rounded-full max-w-56'>
             <input type="text" name="" id="" className='py-1.5 w-full bg-transparent outline-none placeholder-gray-500' placeholder='Search cars' />
             <img src={assets.search_icon} alt="search" />
             </div>
 
 
-            // login/logout and dashboard
+            {/* // login/logout and dashboard */}
             <div className='flex max-sm:flex-col items-start sm:items-center gap-6'>
 
                 <button onClick={()=> isOwner? navigate('/owner') : changeRole()} className='cursor-pointer'>{isOwner ? 'Dashboard':'List cars'}</button>
